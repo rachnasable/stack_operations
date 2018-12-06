@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="utf-8">
+            <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+<body>
+
+    <center><h3>Welcome</h3></center>
+
+
+    <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">Welcome to Stack!!</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Stack</a></li>
+              </ul>
+            </div>
+          </nav>
+
+<!-- 
+<ul id="myList">
+</ul> -->
+
+<div class="container">
+       
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col col-md-6">
+                <p>Click the button to insert an item to the stack</p>
+                <input class="form-control" id="inp" type="text" name="input" value="" placeholder="Enter Value" style="width: 270px"/>
+                <button class="btn btn-primary" onclick="push()">PUSH</button>
+                <button class="btn btn-warning" onclick="pop()">POP</button>
+                <h2>Stack</h2>
+                <ul style="width:273px ;    border: 1px solid orangered;
+                border-top: none;" class="list-group" id="myList">
+                </ul>
+        </div>
+    </div>  
+    
+
+     
+</div>
+
+<script>
+function push() {
+    if(document.getElementById('inp').value.trim() == 0){
+        alert('Enter some value')
+    }
+    else{
+        var newItem = document.createElement("LI");
+        var t = document.getElementById('inp').value;
+        newItem.append(t);
+        newItem.className = "list-group-item"
+
+        var list = document.getElementById("myList");
+        list.insertBefore(newItem, list.childNodes[0]);
+
+        alert(`${t} is pushed in stack`)
+		document.getElementById('inp').value = "";
+    }
+   
+}
+
+function pop() {
+    var list = document.getElementById("myList");
+    list.removeChild(list.childNodes[0]);
+    alert("top element is removed.")
+}
+
+</script>
+
+</body>
+</html>
